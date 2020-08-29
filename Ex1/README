@@ -1,0 +1,27 @@
+jony27003
+
+
+=============================
+=      File description     =
+=============================
+Book.java - Implements the book class.
+Patron.java - Implements the Patron class.
+Library.java - Implements the library class.
+
+
+=============================
+=          Design           =
+=============================
+This program was designed to be flexible for multiple libraries, patrons and books.
+A patron can register to different libraries, and each library handles him independently, 
+giving him an independent ID. A patrons ID is not an intrinsic property of the patron itself.
+Furthermore, a library can hold more than one single copy of the "same" book, 
+which are distinguished by their ID, in a similar way to the patreon.
+
+
+=============================
+=  Implementation details   =
+=============================
+In the library class, I choose to store the books and the patrons in a corresponding array, 
+such that the ID of the patron and the book are represented by thier index in their corresponding arrays.
+In the library and patron arrays, a null entry in the array represents an empty slot, which is open for a new book or patron.
