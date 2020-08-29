@@ -1,0 +1,51 @@
+jony27003
+
+
+=============================
+=      File description     =
+=============================
+Storage.java - An abstract class that represents a storage of any type.
+Locker.java - A class that represents a locker.
+LongTermStorage.java - A class that represents a long term storage.
+BoopingSite.java - Implements Booping.com a hotel booking site.
+StarRatingComparator.java - Implements a comparator for star rating.
+ProximityComparator.java - Implements a comparator for proximity.
+SpaceshipDepositoryTest.java - A test suite for LockerTest and LongTermTest.
+LockerTest.java - A test class for the Locker Class.
+LongTermStorageTest.java - A test class for LongTermStorage Class.
+BoopingSiteTest.java - A test class for BoopingSite Class.
+README - The README file of EX3.
+
+
+
+=============================
+=          Design           =
+=============================
+The abstract Storage Class was designed in an intuitive way. 
+The Locker Class & the LongTermStorage Class inherit from a Storage class, 
+which represents a general storage object of some kind.
+This approach to storage like objects creats a modular design.
+For the second part of EX3, I choose my design as specified in the ex3 description.
+
+
+
+=============================
+=  Implementation details   =
+=============================
+The inheritance relationship between the Locker Class, LongTermStorage Class
+and the Storage Super class was achieved by setting the Storage Class to be 
+an abstract Super class. one of the key reasons for this design was that there is no logic or 
+reason for creating an object of RunTime type Storage.
+In order to store the items in Locker Class and LongTermStorage Class, the inheritance mechanism
+was used, and made them store the items in the same way, via the Storage class. 
+By using a HashMap Data Structure such that the key is a String, which holds the name of the item, 
+and the value is an Integer. this Data Structure was chosen due to its significant low run time access 
+and its ease of use.
+This HashMap represents the number of items of this type that the storage holds. 
+to achieve access from each and every Locker object to the LongTermStorage, 
+I defined a static variable of LongTermStorage in the Locker class, such that this LongTermStorage
+will be available for all the lockers throughout the program.
+As for BoopingSite, In getHotelsInCityByProximity(), I decided to filter the unneeded cities by using 
+an ArrayList data structure, as it is very easy to remove an object from the
+ArrayList and shrinks to the appropriate size.
+And "HotelsByProximityComparator", was handled in the same way.
