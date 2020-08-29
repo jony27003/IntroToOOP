@@ -1,0 +1,42 @@
+jony27003
+
+
+=============================
+=      File description     =
+=============================
+SpaceShip.java - Implements the Super Class for all other SpaceShips, it is an abstract class.
+SpaceShipFactory.java - contains the code which is responsible for creating SpaceShip instances.
+HumanSpaceShip.java - Implements the human SpaceShips which is controlled by a human.
+BasherSpaceShip.java - Implements the basher SpaceShips.
+AggressiveSpaceShip.java - Implements the aggresive SpaceShips.
+RunnerSpaceShip.java - Implements the runner SpaceShips.
+DrunkardSpaceShip.java - Implements the drunkard SpaceShips.
+SpecialSpaceShip.java - Implements the special SpaceShips.
+
+
+
+=============================
+=          Design           =
+=============================
+I implemented the functionality for different ship types in a modular way such that each type of
+ship has a different class, and specific functionality can be added easily in that class.
+This is implemented with inheritance - the different spaceships are sub classes of a spaceship Super Class,
+which contains the operations which are common for all the different spacehips. 
+If the spaceships display different behaviors then the relavent declared method in the Super Class 
+is overridden by the sub classes.
+There is no meaning creating a runtime SpaceShip object,
+so this is an intuitive idea, as all the spaceships are physically identical, but
+behave differently.
+furthermore i have tried to generalize the space ships behavior as a group as much as i could, 
+this made each and every sub class very simple, intuitive and short to implement.
+As for the DrunkardSpaceShip - it's behavior is of a drunk pilot, herefore it performs a few selective actions at random.
+The SpecialSpaceShip - displays aggressive behavior against any RunnerSpaceShip,
+and a defensive behavior towards all other SpaceShips.
+
+
+
+=============================
+=  Implementation details   =
+=============================
+In order to implement the inheritance relationship described above, I defined the SpaceShip class as
+abstract - the different spaceships inherit from it.
