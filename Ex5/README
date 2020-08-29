@@ -1,0 +1,60 @@
+jony27003
+
+
+=============================
+=      File description     =
+=============================
+DirectoryProcessor.java - the directory processor.
+SectionWrapper.java - the section wrapper.
+ProcessManagement.java - the Process Manager.
+OrderFactory.java - the order factory.
+Abs.java - the abs order.
+Type.java - the type order.
+Size.java - the size order.
+Order.java - the order super class.
+AbsComparator.java - the abs order comparator.
+SizeComparator.java - the size order comparator.
+TypeComparator.java - the type order comparator.
+FilterFactory.java - the filter factory.
+GreaterThan.java - the greater than filter.
+Between.java - the between filter
+SmallerThan.java - the smaller than filter.
+File.java - the file filter.
+Contains.java - the contains filter.
+Prefix.java - the prefix filter.
+Suffix.java - the suffix filter.
+Writable.java - the writable filter.
+Executable.java - the executable filter.
+Hidden.java - the hidden filter.
+All.java - the all filter class.
+Filter.java - the filter super class.
+Type1.java - the type 1 exception class.
+Type2.java - the type 2 exception class.
+IllegalSubsectionLineDetected.java - a type of type 2 exception.
+README - the readme file.
+
+
+
+=============================
+=          Design           =
+=============================
+This exercise was designed by using a ProcessManagement class which is in charge of analyzing and managing
+the correct handling of the parser the section wrapper.
+This kind of design allows for great modularity with each and every component in the system having roles his own.
+Furthermore, I used the  "factory based" design for the section wrapper attributes(the orders & the filters),
+which in turn, allowed for the great modularity.
+Such that, whenever the program needs to support a set of known alternatives,
+this set only exists in a single module. (Repeating the alternatives in several modules seemed unnecessary,
+and makes it hard to maintain when an alternative is added or removed).
+As for the exception hierarchy, I Created a type II exception super class, which the
+IllegalSubsectionLineDetected class inherits from.
+additionally, a Type I exception class was used for throwing type I errors.
+
+
+=============================
+=  Implementation details   =
+=============================
+Sorting the files by a filter-order pair was achieved by implementing an adapted MergeSort
+that was suitable for this exercise.
+
+
