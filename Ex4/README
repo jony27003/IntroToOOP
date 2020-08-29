@@ -1,0 +1,69 @@
+jony27003
+
+
+=============================
+=      File description     =
+=============================
+SimpleHashSet.java - An abstract class that represents a simple hash set.
+OpenHashSet.java - Implements an open hash set.
+LinkedListPackage.java - Implements a package for the LinkedList.
+ClosedHashSet.java - Implements a closed hash set data structure.
+StringPackage.java - Implements a package for String.
+CollectionFacadeSet.java - Implements the collection facade. measures the time required to complete chosen tests
+SimpleSetPerformanceAnalyzer.java - Contains code for measuring the time required to complete chosen tests.
+RESULTS - Contains results for the run time of chosen tests on the data structures.
+README - The README file.
+
+
+
+=============================
+=          Design           =
+=============================
+In this exercise I used inheritance and abstract classes and methods.
+The abstract super class SimpleHashSet was designed in an intuitive way.
+ClosedHashSet class and OpenHashSet class inherit from SimpleHashSet.
+This makes sense because they have common methods and both are "a type of a" SimpleHashSet.
+
+
+
+=============================
+=  Implementation details   =
+=============================
+OpenHashSet's table was implemented by using arrays of type LinkedListPackage.
+As we were told in this exercises description, arrays of LinkedList cannot be created in java,
+therefore I created a package class of a linked list - LinkedListPackage
+which packages a LinkedList data structure but also contains it's functionality.
+The deletion method in ClosedHashSet, was implemented by creating a string package class - StringPackage,
+which has an attribute - deletedFlag, which informs if this string was deleted from the set.
+This is necessary for a hash table that is based on quadratic probing.
+
+
+
+=============================
+=    Answers to questions   =
+=============================
+As we expected, OpenHashSet and CloseHashSet performed very poorly on inserting the words from data1.txt.
+This behavior was expected because all of the words in data.txt have the same hash code,
+this is the worst case of input that we can get for both open and closed hash tables,
+and therefore can expect the worst runtime possible for this action on those two data structures.
+For OpenHashSet, because all the words have the same hash, they will go into the same index of the hash table,
+which means they will all go into the same linked list.
+Inserting into a linked list operates in linear time,
+and because the list always grows, the run time will be very poor.
+And as for ClosedHashSet, more and more elements are inserted to the "same" index in the hash table,
+and with quadratic probing we need to loop linearly over more elements, which greatly increases the running time.
+Summarize:
+OpenHashSet: we can observe that it is better to use for data which is more uniformly distributed,
+and preforms very poorly on data which is not.
+In general it is good for searching.
+ClosedHashSet: we can observe that in general it is bad for adding elements, and good for searching.
+TreeSet: we observe that it is very good for adding elements, and good for searching.
+LinkedList: we observe that it is very fast for adding, more than the tree set,
+but very slow for searching elements for all kinds of data.
+HashSet: we observe that it is very good for adding elements, but less than LinkedList,
+and also very good for searching, but less than the HashTables we implemented.
+We can see that OpenHashSet was better than ClosedHashSet for adding, and about
+the same as CloseHashSet for searching.
+OpenHashSet was a bit better in searching for data with many collisions.
+Java's HashSet was much better for adding elements than our HashTables,
+but our HashTables performed better on searching.
